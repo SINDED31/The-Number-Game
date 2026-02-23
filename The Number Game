@@ -1,26 +1,17 @@
-import streamlit as st
 import random
+number= random.randint(1,10)
 
-# Initialize the secret number
-if "number" not in st.session_state:
-    st.session_state.number = random.randint(1, 10)
+print("Hi! It's Sinded here.")
+print("Let's play a game.")
+print("A game of numbers")
+print("Let's see who wins!")
+print("Guess it from 0 to 10")
 
-st.title("Hi! It's Sinded here.")
-st.write("Let's play a game.")
-st.write("A game of numbers")
-st.write("Let's see who wins!")
-st.write("Guess it from 0 to 10")
-
-# Number input
-guess = st.number_input("Guess a number:", min_value=1, max_value=10, step=1)
-
-# Button to submit guess
-if st.button("Submit Guess"):
-    if guess > st.session_state.number:
-        st.write("Too High Mate!!")
-    elif guess < st.session_state.number:
-        st.write("Too Low Mate!!")
+while True:
+    guess= int(input("Guess a number: "))
+    if guess>number:
+        print("Too High Mate!!")
+    elif guess<number:
+            print("Too Low Mate!!")
     else:
-        st.write("That's How you play it, Well done!")
-        # Reset the number for a new game automatically
-        st.session_state.number = random.randint(1, 10)
+        print("That's How you play it, Well done!")
